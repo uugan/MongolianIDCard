@@ -57,8 +57,8 @@ INFO татахтай ижлээр NFC-тэй үнэмлэх эсэхээс ха
  {
      for (int i = 0; i <= 60; i++)
      {
-         byte offset = (byte)((i <= 1) ? 0 : (byte)(i - 1));
-         byte[] readComm = { 0x00, 0xB0, offset, (byte)(0x00 - i <<1), 0xfe };
+         byte offset = (byte)((i <= 1) ? 0 : (i - 1));
+         byte[] readComm = { 0x00, 0xB0, offset, (byte)(0x00 - i <<1 ), 0xfe };
          byte[] respPart = SendApdu(reader, readComm);
          m.Write(respPart, 0, respPart.Length - 2);
      }
