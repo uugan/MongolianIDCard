@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/13e18c53-bf39-4152-9aef-676fd4e296f4)# MongolianIDCard
+# MongolianIDCard
 Монголын иргэний үнэмлэхний санах ой(чип) унших 
 
 https://burtgel.gov.mn/g-sign - Иргэний үнэмлэхний санах ойн бүтцийг эндээс татаад харж болно
