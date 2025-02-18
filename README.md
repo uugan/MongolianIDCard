@@ -19,10 +19,10 @@ ATR гэдэг нь Answer To Reset гэсэн үгний товчлол бөг�
 ## Үнэмлэхний үндсэн мэдээлэл унших
 ```
 00 A4 00 00 02 3F 00    # SELECT MF
-00 A4 04 00 02 49 44 00 # SELECT EF by ID
-00 A4 02 00 02 01 01 00 # SELECT EF INFO (01 01)
-00 B0 00 08 FE          # READ BINARY INFO
-00 B0 01 07 FE          # READ BINARY ADDRESS
+00 A4 01 00 02 DF 01    # SELECT EF by ID
+00 A4 02 00 02 01 01    # SELECT EF INFO (01 01)
+00 B0 00 00 FE          # READ BINARY INFO
+00 B0 00 FE FE          # READ BINARY ADDRESS
 ```
 
 SELECT EF INFO үед хэрэв IdCard old болон IdCard new тохиолдолд ID-н эхний байт нь 0x01 харин NFC үед 0x02 байна:
@@ -40,8 +40,8 @@ READ BINARY дээрээс ирсэн датаг UTF-8 string лүү хөрвү�
 INFO татахтай ижлээр NFC-тэй үнэмлэх эсэхээс хамаарч SELECT EF PHOTO команд дээрх ID-ний эхний утгыг 01 эсвэл 02 болгоно.
 ```
 00 A4 00 00 02 3F 00    # SELECT MF
-00 A4 04 00 02 49 44 00 # SELECT EF by ID (49 44)
-00 A4 02 00 02 01 02 00 # SELEFT EF PHOTO (01 02)
+00 A4 01 00 02 DF 01    # SELECT EF by ID (DF 01)
+00 A4 02 00 02 01 01    # SELEFT EF PHOTO (01 02)
 00 B0 00 00 FE          # READ BINARY PHOTO LOOP 1..61 TIMES
 00 B0 00 FE FE
 00 B0 01 FC FE
