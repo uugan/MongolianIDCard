@@ -73,7 +73,9 @@ INFO татахтай ижлээр NFC-тэй үнэмлэх эсэхээс ха
 
 # MonSign library
 This library is for reading Mongolian ID card and signing data with it in C#.
-Developed with .net 8.0
+
+Developed with .net 8.0.
+
 Add System.Security.Permission in your project first.
 
 ## Add security permission
