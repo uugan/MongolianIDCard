@@ -87,8 +87,8 @@ dotnet add package System.Security.Permissions
 In this example for converting portrait image of jpeg2000, you need to install ImageMagick. 
 
 ```C#
-using UniSign;
-using UniSign.Models;
+using MonSign;
+using MonSign.Models;
 static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.UTF8;
