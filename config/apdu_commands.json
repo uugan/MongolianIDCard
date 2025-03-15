@@ -1,0 +1,22 @@
+{
+  "commands": [
+    {
+      "name": "SELECT_FILE",
+      "cla": "00",
+      "ins": "A4",
+      "p1": "04",
+      "p2": "00",
+      "data": "3F00",
+      "le": "00"
+    },
+    {
+      "name": "READ_RECORD",
+      "cla": "00",
+      "ins": "B2",
+      "p1": "01",
+      "p2": "0C",
+      "data": "",
+      "le": "00"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+﻿{
+    "commands": [
+        {
+            "Name": "SELECT_MF",
+            "CLA": "00",
+            "INS": "A4",
+            "P1": "00",
+            "P2": "00",
+            "Data": "3F00",
+            "Le": ""
+        },
+        {
+            "Name": "SELECT_DF_INFO",
+            "CLA": "00",
+            "INS": "A4",
+            "P1": "01",
+            "P2": "00",
+            "Data": "DF01",
+            "Le": ""
+        },
+        {
+            "Name": "SELECT_EF_INFO",
+            "CLA": "00",
+            "INS": "A4",
+            "P1": "02",
+            "P2": "00",
+            "Data": "0101",
+            "Le": ""
+        },
+        {
+            "Name": "READ_BINARY_CARDINFO",
+            "CLA": "00",
+            "INS": "B0",
+            "P1": "00",
+            "P2": "00",
+            "Data": "",
+            "Le": "FE"
+        },
+        {
+            "Name": "READ_BINARY_ADDRESS",
+            "CLA": "00",
+            "INS": "B0",
+            "P1": "00",
+            "P2": "FE",
+            "Data": "",
+            "Le": "FE"
+        },
+        {
+            "Name": "SELECT_EF_PHOTO",
+            "CLA": "00",
+            "INS": "A4",
+            "P1": "02",
+            "P2": "00",
+            "Data": "0102",
+            "Le": ""
+        },
+        {
+            "Name": "READ_BINARY_PHOTO",
+            "CLA": "00",
+            "INS": "B0",
+            "P1": "00",
+            "P2": "00",
+            "Data": "",
+            "Le": "FE"
+        },
+
+        {
+            "Name": "SELECT_SIGN_APPLICATION",
+            "CLA": "00",
+            "INS": "A4",
+            "P1": "04",
+            "P2": "00",
+            "Data": "A0000000183414010000000000000000",
+            "Le": ""
+        },
+        {
+            "Name": "VERIFY_SIGN_PIN",
+            "CLA": "00",
+            "INS": "20",
+            "P1": "00",
+            "P2": "81",
+            "Data": "",
+            "Le": ""
+        },
+        {
+            "Name": "SET_SIGN_ALGORITHM",
+            "CLA": "00",
+            "INS": "22",
+            "P1": "41",
+            "P2": "B6",
+            "Data": "840102800142",
+            "Le": ""
+        },
+        {
+            "Name": "SIGN_HASH",
+            "CLA": "00",
+            "INS": "2A",
+            "P1": "90",
+            "P2": "A0",
+            "Data": "",
+            "Le": ""
+        },
+        {
+            "Name": "GET_SIGNED_DATA",
+            "CLA": "00",
+            "INS": "2A",
+            "P1": "9E",
+            "P2": "9A",
+            "Data": "",
+            "Le": "80"
+        },
+        {
+            "Name": "SELECT_CERT_DF_INFO",
+            "CLA": "00",
+            "INS": "A4",
+            "P1": "00",
+            "P2": "00",
+            "Data": "DF04",
+            "Le": ""
+        },
+        {
+            "Name": "SELECT_CERT_EF_INFO",
+            "CLA": "00",
+            "INS": "A4",
+            "P1": "00",
+            "P2": "00",
+            "Data": "0401",
+            "Le": ""
+        },
+        {
+            "Name": "READ_BINARY_CERT",
+            "CLA": "00",
+            "INS": "B0",
+            "P1": "00",
+            "P2": "00",
+            "Data": "",
+            "Le": "FE"
+        }
+
+    ]
+}
