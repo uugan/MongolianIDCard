@@ -28,27 +28,35 @@ namespace MonSign
 
         public CitizenInfo readCitizenInfo()
         {
-
             var selectMFInfoCommand = apduCommands.FirstOrDefault(cmd => cmd.Name == "SELECT_MF");
             var selectDFInfoCommand = apduCommands.FirstOrDefault(cmd => cmd.Name == "SELECT_DF_INFO");
             var selectEfInfoCommand = apduCommands.FirstOrDefault(cmd => cmd.Name == "SELECT_EF_INFO");
             var readBinaryCardInfo = apduCommands.FirstOrDefault(cmd => cmd.Name == "READ_BINARY_CARDINFO");
             var readBinaryAddress = apduCommands.FirstOrDefault(cmd => cmd.Name == "READ_BINARY_ADDRESS");
             var selectEfPhotoCommand = apduCommands.FirstOrDefault(cmd => cmd.Name == "SELECT_EF_PHOTO");
-            CitizenInfo citizenInfo = new CitizenInfo();
 
+            CitizenInfo citizenInfo = new CitizenInfo();
 
             byte[] atr = smartCardReader.GetAttrib();
             string atr_str = BitConverter.ToString(atr);
-            // Console.WriteLine("ATR:"+ atr_str);
 
             byte cardtype = 0x01;
             if (atr_str == "3B-7F-96-00-00-80-31-80-65-B0-85-05-00-11-12-0F-FF-82-90-00") // NFC IDCard
             {
                 cardtype = 0x02;
-                selectDFInfoCommand.P1 = "00";
-                selectEfInfoCommand.Data = cardtype.ToString("X2") + selectEfInfoCommand.Data.Substring(2);
-                selectEfPhotoCommand.Data = cardtype.ToString("X2") + selectEfPhotoCommand.Data.Substring(2);
+
+                if (selectDFInfoCommand != null)
+                {
+                    selectDFInfoCommand.P1 = "00";
+                }
+                if (selectEfInfoCommand != null)
+                {
+                    selectEfInfoCommand.Data = cardtype.ToString("X2") + selectEfInfoCommand.Data.Substring(2);
+                }
+                if (selectEfPhotoCommand != null)
+                {
+                    selectEfPhotoCommand.Data = cardtype.ToString("X2") + selectEfPhotoCommand.Data.Substring(2);
+                }
             }
 
             if (selectMFInfoCommand != null)
@@ -58,14 +66,12 @@ namespace MonSign
             }
             if (selectDFInfoCommand != null)
             {
-
                 byte[] response = smartCardReader.SendApdu(selectDFInfoCommand);
                 if (!SmartCardUtils.IsResponseValid(response)) return citizenInfo;
             }
 
             if (selectEfInfoCommand != null)
             {
-
                 byte[] response = smartCardReader.SendApdu(selectEfInfoCommand);
                 if (!SmartCardUtils.IsResponseValid(response)) return citizenInfo;
             }
@@ -84,7 +90,6 @@ namespace MonSign
 
             if (selectEfPhotoCommand != null)
             {
-
                 byte[] jpeg2000Array = readPortrait(smartCardReader, selectEfPhotoCommand);
                 citizenInfo.portrait = jpeg2000Array;
             }
@@ -198,7 +203,7 @@ namespace MonSign
             return jpeg2000Array;
         }
 
-     
+
         public byte[] signDoc(string pin, byte[] docHash)
         {
             byte[] signed_data = new byte[0];
@@ -319,7 +324,7 @@ namespace MonSign
 
         }
 
-      
+
 
     }
 }
