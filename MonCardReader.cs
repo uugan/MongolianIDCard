@@ -18,7 +18,7 @@ namespace MonSign
         {
             cardReader = reader;
             smartCardReader = new SmartCardReader(cardReader);
-            LoadApduCommands("UniSign.apdu_commands.json");
+            LoadApduCommands("MonSign.apdu_commands.json");
         }
 
         private void LoadApduCommands(string fileName)
