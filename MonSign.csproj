@@ -9,14 +9,17 @@
 	<Authors>Uugan</Authors>
 	<Product>MonSign</Product>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	  
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="apdu_commands.json" />
+	 <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="apdu_commands.json" />
+	  
   </ItemGroup>
 
   <ItemGroup>
