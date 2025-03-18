@@ -78,9 +78,9 @@ Developed with .net 8.0.
 
 Add System.Security.Permission in your project first.
 
-## Add security permission
+## How library as dependency
 ```
-dotnet add package System.Security.Permissions
+dotnet add package com.github.uugan.MonSign --version 1.0.1 #version can be changed
 ```
 ## How to use
 
